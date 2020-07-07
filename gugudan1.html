@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>구구단 연습</h1>
+    출력할 단수 : <input type="text" id="Num"><br>
+    <button onclick="runGugudan()">확인</button>
+
+    <script>
+      function runGugudan(){
+        var str = document.getElementById("Num").value ;
+        var num = Number(str);
+
+        if(num > 1){
+          document.write("<h2>구구단 " + num + " 단 입니다.<h2><br>");
+          for(var i=1; i < 10; i++){
+            document.write(num + " * " + i + " = " + (num * i) + "<br>");
+          }
+        }else{
+          document.write("2이상의 수를 입력해주세요");
+        }
+      }
+
+    </script>
+  </body>
+</html>

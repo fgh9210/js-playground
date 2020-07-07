@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>loop exam 2</h1>
+    <script>
+      var sum = 0;
+
+      // for(var n = 0; n <= 100; n=n+2){
+      //   sum = sum + n ;
+      //   console.log(n, sum);
+      // }
+      for(var n = 0; n <= 100; n++){
+        if(n % 2 ==0){
+          sum += n;
+          console.log(n, sum);
+        }
+      }
+      document.write("1~100 짝수합은" + sum + "입니다");
+
+    </script>
+  </body>
+</html>

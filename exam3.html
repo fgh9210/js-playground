@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>소수찾기</h1>
+    <div id="result"></div>
+    <script>
+      var number = {};
+      number.all =[];
+      number.prime =[];
+
+      number.addAllNumber = function(max_number) {
+        for( var i = 2; i <= max_number ; i++){
+          this.all.push(i);
+        }
+      };
+
+      //소수인지확인
+      number.isPrime = function(num){
+          for ( var i = 2; i < num ; i++ ){
+            if(num % i === 0)  return false;
+          }
+          return true;
+      };
+
+      //소수추가
+      number.addPrime = function(){
+        for(var i = 0 ; i < this.all.length ; i++ ){
+            var n = this.all[i];
+            if (this.isPrime(n)){
+                this.prime.push(n);
+            }
+        }
+      };
+
+      //전체 소수 가져오기
+      number.getAllPrime = function(){
+        var ret="";
+        for(var i =0 ; i < this.prime.length; i++){
+          ret += (i+1) + "번째소수 " + this.prime[i] + "<br>\n" ;
+        }
+        return ret;
+      }
+
+      number.addAllNumber(10000);
+      number.addPrime();
+      document.getElementById('result').innerHTML = number.getAllPrime();
+
+    </script>
+  </body>
+</html>

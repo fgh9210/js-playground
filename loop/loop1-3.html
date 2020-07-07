@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>loop exam 1</h1>
+    <script>
+      var sum = 0;
+      var n = -1;
+
+      while(n != 0){
+        var str = prompt("숫자 입력해 주세요(0 입력은 종료됨) : ");
+        n = Number(str);
+        sum = sum + n;
+        console.log(n, sum);
+      }
+
+      document.write("숫자 합은" + sum + "입니다");
+    </script>
+  </body>
+</html>
