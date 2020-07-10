@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>gugudan 7</title>
+  </head>
+  <body>
+    <h1>구구단배열</h1>
+    <script>
+      var results = [];
+      var length = 9;
+
+      for(var j = 2; j <= length; j++){
+        for(var i =1; i <= length; i++){
+          results[i] = j*i;
+        }
+        document.write("<h2>" + j + "단</h2>");
+        for(var i =1; i<= length; i++){
+          var str = j + " X " + i + " = " + results[i] +"<br>";
+          document.write(str);
+        }
+      }
+    </script>
+  </body>
+</html>
