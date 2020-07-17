@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" >
+  <head>
+    <meta charset="utf-8">
+    <title>구구단 파이널</title>
+  </head>
+  <body>
+
+    <script>
+    gugudan = {};
+    gugudan.start = -1;
+    gugudan.end = -1;
+    gugudan.result =[];
+    gugudan.current = -1;
+
+    gugudan.calculate = function(n){
+      gugudan.current = n ;
+      for(var i = 0; i < 9 ; i++){
+        this.result[i] = gugudan.current * (i+1);
+      }
+    }
+
+    gugudan.print = function(){
+      for(var i =0; i<9; i++){
+          if(gugudan.start === gugudan.current && (i+1) === gugudan.end){
+            break;
+          }else{
+            document.write(this.current + " * " + (i+1) + " = " + this.result[i] + "<br>");
+          }
+      }
+    }
+
+    gugudan.main = function(){
+      var str = prompt("출력하고 싶은 단 입력하세요 ex. 5,7 : ");
+      var num = str.split(",");
+      gugudan.start = num[0];
+      gugudan.end = num[1];
+
+      for(var i = 2; i <=9 ; i++){
+          this.calculate(i);
+          this.print();
+      }//for
+    }
+
+    main();
+
+    </script>
+  </body>
+</html>
