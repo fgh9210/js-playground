@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>calculator</title>
+  </head>
+  <body>
+    <h1>문자열 계산기 구현하기</h1>
+    <div>
+      첫번째 수 <input type="text" id="n1"><br>
+      연산자 <input type="text" id ="op"><br>
+      두번째 수 <input type="text" id="n2"><br>
+      <button onclick="calc()" >실행</button>
+    </div>
+    <div id="output"></div>
+    <script>
+
+    input = {};
+    input.getFirstValue = function();
+    input.getSecondValue= function();
+    intput.getOperator = function();
+
+    output = {}
+    output.print = function();
+
+    calculator = {}
+    calculator.calculate = function();
+
+      function getFirstValue() {
+        var n = Number(prompt("첫번째 값을 입력해 주세요"));
+        return n;
+      }
+
+      var n = 2;
+      function getSecondValue() {
+        var num2 = Number(prompt(n+"번째 값을 입력해 주세요"));
+        n++;
+        return num2;
+      }
+
+      function getOperation(){
+        while(true){
+          var op = prompt("연산자를 입력해 주세요");
+          if(op === "+" || op === "-" || op ==="*" || op === "/" || op === "q"){
+            break;
+          }else{
+            alert("올바른 연산자를 입력해주세요");
+          }
+        }
+        return op;
+      }
+
+      function calculate(first, second, op){
+        var ret;
+
+        switch (op) {
+          case "+":
+            ret = first + second;
+            break;
+          case "-":
+            ret = first - second;
+            break;
+          case "*":
+            ret = first * second;
+            break;
+          case "/":
+            ret = first / second;
+            break;
+          default:
+            break;
+        }
+        return ret;
+      }
+
+      function print(value){
+        return "최종 결과 값은 " + value + "입니다";
+      }
+
+      function main(){
+        var result = getFirstValue();
+        while(true){
+          var op = getOperation();
+          if(op === 'q'){
+            break;
+          }
+          var num = getSecondValue();
+          result = calculate(result, num, op);
+        }
+        var output = document.getElementById("output");
+        output.innerHTML = print(result);
+      }
+
+      main();
+      /*
+      function calc() {
+        var str1 = document.getElementById("n1").value;
+        var str2 = document.getElementById("n2").value;
+        var op = document.getElementById("op").value;
+        var n1 = Number(str1);
+        var n2 = Number(str2);
+
+        var out = document.getElementById("output");
+        var str = "";
+        switch (op) {
+          case "+":
+            str += "더하기 : " + (n1+n2) + "<br>";
+            console.log(op + " " + str);
+            break;
+          case "-":
+            str += "빼기 : " + (n1-n2) + "<br>";
+            break;
+          case "*":
+            str += "곱하기 : " + (n1*n2) + "<br>";
+            break;
+          case "/":
+            str += "나누기 : " + (n1/n2) + "<br>";
+            break;
+          default:
+          str+="잘못입력하셨습니다";
+        }
+        out.innerHTML = str;
+      }
+      */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>calculator</title>
+  </head>
+  <body>
+    <h1>문자열 계산기 구현하기</h1>
+    <div id="output"> 알 이즈 웰 </div>
+    <script>
+
+      var input = {count:2};
+
+
+      input.getFirstValue() = function() {
+        var n = Number(prompt("첫번째 값을 입력해 주세요"));
+        return n;
+      };
+
+      input.getSecondValue() = function() {
+        var num2 = Number(prompt(this.count +"번째 값을 입력해 주세요"));
+        n++;
+        return num2;
+      };
+
+      input.getOperation() = function() {
+        while(true){
+          var op = prompt("연산자를 입력해 주세요");
+          if(op === "+" || op === "-" || op ==="*" || op === "/" || op === "q"){
+            break;
+          }else{
+            alert("올바른 연산자를 입력해주세요");
+          }
+        }
+        return op;
+      };
+
+      calculator = {};
+      input.calculate = function(first, second, op){
+        var ret;
+
+        switch (op) {
+          case "+":
+            ret = first + second;
+            break;
+          case "-":
+            ret = first - second;
+            break;
+          case "*":
+            ret = first * second;
+            break;
+          case "/":
+            ret = first / second;
+            break;
+          default:
+            break;
+        }
+        return ret;
+      };
+
+      output ={};
+
+      output.out = document.getElementById('output');
+      output.print = function(value){
+        this.out.innerHTML = "최종 결과 값은 " + value + "입니다";
+      };
+
+      function main(){
+        var result = input.getFirstValue();
+        while(true){
+          var op = input.getOperation();
+          if(op === 'q'){
+            break;
+          }
+          var num = input.getSecondValue();
+          result = calculation.calculate(result, num, op);
+        }
+        var output = document.getElementById("output");
+        output.print(result);
+      };
+
+      main();
+
+    </script>
+  </body>
+</html>
